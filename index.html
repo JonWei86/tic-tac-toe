@@ -4,11 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="btns" id="1">1</button><button class="btns" id="2">2</button><button class="btns" id="3">3</button><br>
-    <button class="btns" id="4">4</button><button class="btns" id="5">5</button><button class="btns" id="6">6</button><br>
-    <button class="btns" id="7">7</button><button class="btns" id="8">8</button><button class="btns" id="9">9</button>
-    <script src="script.js"></script>
+    <div class="game-container">
+        <h1 class="title">Tic-Tac-Toe</h1>
+        <div class="board-container">
+            <button class="btns" id="1"></button><button class="btns" id="2"></button><button class="btns" id="3"></button>
+            <button class="btns" id="4"></button><button class="btns" id="5"></button><button class="btns" id="6"></button>
+            <button class="btns" id="7"></button><button class="btns" id="8"></button><button class="btns" id="9"></button>
+        </div>
+        <div class="player-info-container">
+            <div class="player-container player1-container">
+                <p class="player-name player1-name">Player 1</p>
+                <p class="player-marker player1-marker">Marker: O</p>
+                <p class="player-score player1-score">Score:</p>
+            </div>
+            <div class="current player-container">
+                <p class="player-name">Player <span id="current-player"></span>'s turn</p>
+                <p class="player-marker">Current Marker: <span id="current-marker"></span></p>
+            </div>
+            <div class="player-container player2-container">
+                <p class="player-name player2-name">Player 2</p>
+                <p class="player-marker player2-marker">marker: X</p>
+                <p class="player-score player2-score">Score:</p>
+            </div>
+        </div>
+    </div>
+        <script src="script.js"></script>
 </body>
 </html>
