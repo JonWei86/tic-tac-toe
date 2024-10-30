@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="game-container">
@@ -17,17 +20,21 @@
         <div class="player-info-container">
             <div class="player-container player1-container">
                 <p class="player-name player1-name">Player 1</p>
-                <p class="player-marker player1-marker">Marker: O</p>
-                <p class="player-score player1-score">Score:</p>
+                <div class="player1-subcontainer">
+                    <p class="player-marker player1-marker">MARKER: <span class="marker-class">O</span></p>
+                    <p class="player-score player1-score">Score:</p>
+                </div>
             </div>
             <div class="current player-container">
                 <p class="player-name">Player <span id="current-player"></span>'s turn</p>
-                <p class="player-marker">Current Marker: <span id="current-marker"></span></p>
+                <p class="player-marker">Current Marker: <span class="marker-class" id="current-marker"></span></p>
             </div>
             <div class="player-container player2-container">
                 <p class="player-name player2-name">Player 2</p>
-                <p class="player-marker player2-marker">marker: X</p>
-                <p class="player-score player2-score">Score:</p>
+                <div class="player2-subcontainer">
+                    <p class="player-marker player2-marker">MARKER: <span class="marker-class">X</span></p>
+                    <p class="player-score player2-score">Score:</p>
+                </div>
             </div>
         </div>
     </div>

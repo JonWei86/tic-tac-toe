@@ -127,20 +127,23 @@
         modal.innerHTML=`${msg}`;
         //append modal window
         modalContainer.appendChild(modal);
+        const btnContainer = document.createElement("div");
+        btnContainer.classList.add("btn-container");
+        modal.appendChild(btnContainer);
         //create buttons
         //create playAgain-btn
         const playAgainBtn = document.createElement("button");
         playAgainBtn.classList.add("play-again-btn");
         playAgainBtn.addEventListener('click', ()=>{playAgain(modalContainer)});
-        playAgainBtn.innerText= 'Play Again?';
+        playAgainBtn.innerText= 'Play Another Round';
         //create resetBtn
         const resetBtn = document.createElement("button");
         resetBtn.classList.add("reset-btn");
-        resetBtn.innerText= 'Reset';
+        resetBtn.innerText= 'Reset Game';
         resetBtn.addEventListener('click', ()=>{reset(modalContainer)});
         //appened buttons
-        modal.appendChild(resetBtn);
-        modal.appendChild(playAgainBtn);
+        btnContainer.appendChild(playAgainBtn);
+        btnContainer.appendChild(resetBtn);
         //appened modal container and window
         document.querySelector(".board-container").appendChild(modalContainer);
     };
