@@ -32,15 +32,6 @@
     const player1 = new Player();
     const player2 = new Player();
     
-    console.log("Player 1:", player1.playerNum, player1.maker);
-    console.log("Player 2:", player2.playerNum, player2.maker);
-    console.log("Players Array",gameBoard.players);
-    console.log("Current Marker", gameBoard.currentMarker);
-    console.log("Player" + gameBoard.playersTurn +"'s turn");
-    console.log(gameBoard.board[0], gameBoard.board[1], gameBoard.board[2]);
-    console.log(gameBoard.board[3], gameBoard.board[4], gameBoard.board[5]);
-    console.log(gameBoard.board[6], gameBoard.board[7], gameBoard.board[8]);
-    
     const btns = document.querySelectorAll(".btns");
     
     for (let btn of btns){
@@ -53,13 +44,7 @@
                 checkWinner();
                 gameBoard.updateMarker();
                 gameBoard.updatePlayerTurn();
-                console.log("Current Marker should be", gameBoard.currentMarker);
-                console.log("Player" + gameBoard.playersTurn +"'s turn");
             } else console.log("you cant go here")
-    
-            console.log(gameBoard.board[0], gameBoard.board[1], gameBoard.board[2]);
-            console.log(gameBoard.board[3], gameBoard.board[4], gameBoard.board[5]);
-            console.log(gameBoard.board[6], gameBoard.board[7], gameBoard.board[8]);
         });
     };
     
@@ -95,9 +80,10 @@
         console.log("col 3", col3);
         console.log("diag 1", diag1);
         console.log("diag 2", diag2);
-    
+
         for(set of allWinningSets){
-            if(allWinningSets.flat().some((element)=> element === null)){
+            console.log('running', set)
+            console.log('index of', allWinningSets.indexOf(set))
                 if (set.join() === "X,X,X" || set.join() === "O,O,O"){
                     createModal(`<p>Player ${gameBoard.playersTurn} won!</p>`);
                     if(set.join() === "O,O,O") {++player1.score; updateScores(player1);}
@@ -105,11 +91,12 @@
                     console.log('player1 score:', player1.score)
                     console.log('player2 score:', player2.score)
                     return set
-                } 
-            }else{return createModal("It's a tie! No one wins!")}
-        
+                }else{
+                    if(allWinningSets.flat().filter((element) => element === null).length === 0 && allWinningSets.indexOf(set) === allWinningSets.length - 1){
+                        return createModal("It's a tie! No one wins!")
+                    }
+                }
         }
-    
     };
 
     function updateScores(player){
