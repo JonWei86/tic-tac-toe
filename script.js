@@ -27,7 +27,7 @@
         this.maker = this.playerNum === 1 ? "O" : "X"
 
         this.score = 0
-    };
+    }
     
     const player1 = new Player();
     const player2 = new Player();
@@ -46,7 +46,7 @@
                 gameBoard.updatePlayerTurn();
             } else console.log("you cant go here")
         });
-    };
+    }
     
     function checkWinner(){
         let allWinningSets = [];
@@ -59,7 +59,7 @@
             
             allWinningSets.push(winningSet);
             return winningSet;
-        };
+        }
     
         const row1 = createWinningSet([0,1,2]);
         const row2 = createWinningSet([3,4,5]);
@@ -81,7 +81,7 @@
         console.log("diag 1", diag1);
         console.log("diag 2", diag2);
 
-        for(set of allWinningSets){
+        for(let set of allWinningSets){
             console.log('running', set)
             console.log('index of', allWinningSets.indexOf(set))
                 if (set.join() === "X,X,X" || set.join() === "O,O,O"){
@@ -97,7 +97,7 @@
                     }
                 }
         }
-    };
+    }
 
     function updateScores(player){
         let playerScoreEle = document.querySelector(`.player${player.playerNum}-score`)
@@ -133,19 +133,19 @@
         btnContainer.appendChild(resetBtn);
         //appened modal container and window
         document.querySelector(".board-container").appendChild(modalContainer);
-    };
+    }
 
     function playAgain(modalContainer){
         gameBoard.board = [null, null, null, null, null, null, null, null, null];
-        for (btn of btns){
+        for (let btn of btns){
             btn.innerText = " ";
         }
         document.querySelector('.board-container').removeChild(modalContainer)
-    };
+    }
 
     function reset(modalContainer){
         gameBoard.board = [null, null, null, null, null, null, null, null, null];
-        for (btn of btns){
+        for (let btn of btns){
             btn.innerText = " ";
         }
 
@@ -159,6 +159,6 @@
         updateScores(player2)
 
         document.querySelector('.board-container').removeChild(modalContainer)
-    };
+    }
 
 })()
