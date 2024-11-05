@@ -125,7 +125,7 @@
     }
 
     function playAgain(modalContainer){
-        gameBoard.board = [null, null, null, null, null, null, null, null, null];
+        gameBoard.board = gameBoard.board.map(el => el = null)
         for (let btn of btns){
             btn.innerText = " ";
         }
@@ -133,10 +133,7 @@
     }
 
     function reset(modalContainer){
-        gameBoard.board = gameBoard.board.map(el => el = null)
-        for (let btn of btns){
-            btn.innerText = " ";
-        }
+        playAgain(modalContainer)
 
         gameBoard.playersTurn = 1,
         gameBoard.currentMarker = "O"
@@ -146,8 +143,5 @@
 
         updateScores(player1)
         updateScores(player2)
-
-        document.querySelector('.board-container').removeChild(modalContainer)
     }
-
 })()
