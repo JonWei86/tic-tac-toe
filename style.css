@@ -1,0 +1,167 @@
+*, 
+* ::after, 
+*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: rgb(255, 153, 0);
+}
+
+.title{
+    font-size: 3em;
+    font-family: "Luckiest Guy";
+    letter-spacing: 0.05em;
+    color: white;
+    -webkit-text-stroke: 0.01em;
+    -webkit-text-stroke-color: black;
+    background-color: rgb(255, 208, 0);
+    clip-path: polygon(0% 0%, 100% 0%,  95% 100%, 5% 100%);
+    padding: 0.25em 0.75em;
+}
+
+.game-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100dvw;
+}
+
+.board-container{
+    margin: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    height: 25dvw;
+    width: 25dvw;
+    gap: 0.25rem;
+    align-self: center;
+    justify-content: space-between;
+    background-color: black;
+    box-shadow: 3px 3px 10px black;
+}
+
+.btns {
+    height: calc((25dvw - 0.5rem)/3);
+    width: calc((25dvw - 0.5rem)/3);
+    font-size: 5rem;
+    background-color: white;
+    border: none;
+    font-family: "Gaegu";
+}
+
+.player-info-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(255, 208, 0);
+}
+
+.player-container{
+    display: flex;
+    flex-direction: column;
+    padding: 1em 1.5em;
+    color: white;
+    flex: 1;
+    text-align: center;
+    padding: 1.5em 0;
+}
+
+.player-name{
+    font-size: 3em;
+    font-family: "Luckiest Guy";
+    letter-spacing: 0.05em;
+    color: white;
+    -webkit-text-stroke: 0.05em black;
+}
+
+.player1-container{
+    background-color: red;
+    clip-path: polygon(0% 0%, 100% 0%,  90% 100%, 0% 100%);
+}
+
+.player2-container{
+    background-color: blue;
+    clip-path: polygon(0% 0%, 100% 0%,  100% 100%, 10% 100%);
+}
+
+.current {
+    text-align: center;
+    justify-content: center;
+    padding: 0 0;
+    flex: 2;
+}
+
+.player-marker{
+    font-size: 1.75em;
+    font-family:"Luckiest Guy";
+    letter-spacing: 0.05em;
+    -webkit-text-stroke: 0.05em black;
+}
+
+.marker-class{
+    font-family: "Gaegu";
+    font-size: 1.75em;
+    font-weight: bolder;
+    padding: 0 0 0 0.1em;
+    color: white;
+    -webkit-text-stroke: 0.002em rgb(0, 0, 0);
+}
+
+.player-score{
+    font-family: "Luckiest Guy";
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+    -webkit-text-stroke: 0.05em black;
+}
+
+.modal-container{
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.637);
+    height: 25dvw;
+    width: 25dvw;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    padding: 2em;
+    align-items: center;
+    border-radius: 10px;
+    font-family: "Luckiest Guy";
+    letter-spacing: 0.05em;
+    -webkit-text-stroke: 0.005em black;
+}
+
+.modal > p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    font-size: 3dvh;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reset-btn,
+.play-again-btn{
+    font-family: "Luckiest Guy";
+    font-size: 1.5dvh;
+    margin: 1em;
+    padding: 0.5em 1em;
+    border: none;
+    color: white;
+    background-color: rgb(255, 208, 0);
+    border-radius: 1em;
+    border: 3px solid black;
+    letter-spacing: 0.05em;
+    -webkit-text-stroke: 0.05em black;
+}    
