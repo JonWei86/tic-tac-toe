@@ -133,7 +133,7 @@
     }
 
     function reset(modalContainer){
-        gameBoard.board = [null, null, null, null, null, null, null, null, null];
+        gameBoard.board = gameBoard.board.map(el => el = null)
         for (let btn of btns){
             btn.innerText = " ";
         }
